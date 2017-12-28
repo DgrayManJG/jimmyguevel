@@ -14,17 +14,26 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        $user = $this->getUser();
-        if ($user instanceof UserInterface) {
-            return $this->redirectToRoute('home');
+        if ($this->getUser() != null) {
+            return $this->redirectToRoute("home");
         }
 
-        /** @var AuthenticationException $exception */
-        $exception = $this->get('security.authentication_utils')
-            ->getLastAuthenticationError();
+        $authenticationUtils = $this->get('security.authentication_utils');
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        return $this->render('PlanningBundle:AccountUsers:auth.html.twig', array(
+            'last_username' => $lastUsername,
+            'error' => $error,
+        ));
+    }
 
-        return $this->render('default/login.html.twig', [
-            'error' => $exception ? $exception->getMessage() : NULL,
-        ]);
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction(Request $request)
+    {
+
     }
 }

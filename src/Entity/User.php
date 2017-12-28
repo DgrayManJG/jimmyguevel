@@ -50,9 +50,11 @@ class User implements UserInterface, \Serializable
     private $token;
 
     /**
-     * @ORM\Column(type="string", unique=true)
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="array")
      */
-    private $apiKey;
+    private $roles;
 
     /**
      * @ORM\Column(name="is_active", type="boolean")
@@ -191,23 +193,6 @@ class User implements UserInterface, \Serializable
         $this->isActive = $isActive;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getApiKey()
-    {
-        return $this->apiKey;
-    }
-
-    /**
-     * @param mixed $apiKey
-     */
-    public function setApiKey($apiKey)
-    {
-        $this->apiKey = $apiKey;
-    }
-
-
 
     public function getSalt()
     {
@@ -216,9 +201,26 @@ class User implements UserInterface, \Serializable
         return null;
     }
 
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles[] = $roles;
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return array
+     */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return $this->roles;
     }
 
     public function eraseCredentials()
