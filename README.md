@@ -10,6 +10,7 @@
 <p>composer require asset</p>
 <p>composer require encore</p>
 <p>composer require security</p>
+<p>composer require security-csrf form</p>
 
 <br/>
 <br/>

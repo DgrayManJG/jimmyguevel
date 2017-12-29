@@ -2,15 +2,100 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/png" href="images/logo/wolf.png" />
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('build/css/materialize.css') }}">
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        <!-- BEGIN NAV -->
+        <ul id="nav-mobile" style="width:200px; margin-top:65px;" class="side-nav fixed">
+            <li><a href="#">Icon 1</a></li>
+            <li><a href="#">Icon 2</a></li>
+        </ul>
+
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="{{ url('home') }}" class="brand-logo"><img src="images/logo/wolf.png" alt="logo-wolf" height="50" width="56"></a>
+
+                {% if app.user is not null %}
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="logout">Logout</a></li>
+                    </ul>
+
+                    <ul class="right grey-text">
+                        <li>
+                            <p>Bonjour, {{ app.user.username }}</p>
+                        </li>
+                    </ul>
+                {% else %}
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url('login') }}">Login</a></li>
+                    </ul>
+                {% endif %}
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="#">Navbar Link</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        <!-- END NAV -->
+
+        <!-- BEGIN ROW -->
+        <div class="row">
+
+            <!-- BEGIN COLUMN S2 -->
+            <div class="col s2">
+            </div>
+            <!-- END COLUMN S2 -->
+
+            <!-- BEGIN COLUMN S8 -->
+            <div class="col s8">
+
+                {% for message in app.flashes('success') %}
+                    <br>
+                    <div id="card-alert" class="card green lighten-5">
+                        <div class="card-content green-text">
+                            <p>SUCCESS : {{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% block body %}{% endblock %}
+            </div>
+            <!-- END COLUMN S8 -->
+
+            {% block javascripts %}{% endblock %}
+
+            <!-- BEGIN COLUMN S2 -->
+            <div class="col s2">
+                <div class="row">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Card Title</span>
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END COLUMN S2 -->
+
+        </div>
+        <!-- END ROW -->
+
+        {% block footer %}{% endblock %}
+
         <script src="{{ asset('build/js/jquery.js') }}"></script>
         <script src="{{ asset('build/js/materialize.js') }}"></script>
         <script src="{{ asset('build/js/app.js') }}"></script>

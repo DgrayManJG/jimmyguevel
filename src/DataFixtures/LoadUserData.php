@@ -24,6 +24,7 @@ class LoadUserData extends Fixture
 		$encoded = $this->encoder->encodePassword($user, $plainPassword);
 		$user->setPassword($encoded);
 		$user->setMail("jimmygue@hotmail.fr");
+		$user->setRoles('ROLE_ADMIN');
 		$manager->persist($user);
 
 		$manager->flush();

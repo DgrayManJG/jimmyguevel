@@ -7,7 +7,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User implements UserInterface, \Serializable
@@ -210,6 +209,7 @@ class User implements UserInterface, \Serializable
     public function setRoles($roles)
     {
         $this->roles[] = $roles;
+
         return $this;
     }
 

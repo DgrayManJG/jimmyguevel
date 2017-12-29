@@ -26,10 +26,15 @@ class Project
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\Length(min=200)
+     * @Assert\Length(min=100)
      * @Assert\NotBlank()
      */
     private $content;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $link;
 
     /**
      * @ORM\Column(type="date")
@@ -96,6 +101,24 @@ class Project
     {
         $this->content = $content;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param mixed $link
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    }
+
+
 
     /**
      * @return mixed

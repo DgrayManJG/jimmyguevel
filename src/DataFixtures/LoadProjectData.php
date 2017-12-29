@@ -17,9 +17,10 @@ class LoadProjectData extends Fixture
 
 		$project->setTitle("API wood-designer");
 		$project->setContent("Blablabla");
+		$project->setLink("https://www.wood-designer.fr/#/home");
 		$project->setPublished(true);
 		$project->setDate(new \DateTime($date));
-		$project->setImage("wolf.png");
+		$project->setImage("Wood-Designer_visuel-generique2.jpg");
 
 		$manager->persist($project);
 
