@@ -2,27 +2,40 @@
 
 {% block body %}
 
-        {% if error %}
-            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
+    {% if error %}
+        <div id="card-alert" class="card red lighten-5">
+            <div class="card-content red-text">
+                <p>DANGER : {{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            </div>
+        </div>
+    {% endif %}
 
-        <form action="{{ path('login') }}" method="post">
+    <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <h4>Connexion</h4>
+        <p class="left-align light">
+            <form action="{{ path('login') }}" method="post">
 
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="_password" />
 
-            {#
-                If you want to control the URL the user
-                is redirected to on success (more details below)
-                <input type="hidden" name="_target_path" value="/account" />
-            #}
+                {#
+                    If you want to control the URL the user
+                    is redirected to on success (more details below)
+                    <input type="hidden" name="_target_path" value="/account" />
+                #}
 
-            <button type="submit">login</button>
-        </form>
+                <button type="submit">login</button>
+            </form>
+        </p>
+    </div>
+
+
+
 
 {% endblock %}
