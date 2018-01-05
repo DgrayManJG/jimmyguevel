@@ -11,11 +11,16 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // uncomment to define the assets of the project
-    .addEntry('js/app', './assets/js/app.js')
     .addEntry('js/jquery', './assets/js/jquery-2.2.4.min.js')
-    .addEntry('js/hammer', './assets/js/hammer.min.js')
     .addEntry('js/materialize', './assets/js/materialize.js')
-
+    .addEntry('js/anime', './assets/js/anime.min.js')
+    .addEntry('js/app', './assets/js/app.js')
+    .addEntry('js/about', './assets/js/about.js')
+    .addEntry('js/home', './assets/js/home.js')
+    .addEntry('js/hammer', './assets/js/hammer.min.js')
+    
+    .addStyleEntry('css/home', './assets/css/home.scss')
+    .addStyleEntry('css/about', './assets/css/about.scss')
     .addStyleEntry('css/app', './assets/css/app.scss')
     .addStyleEntry('css/materialize', './assets/css/materialize.min.css')
 

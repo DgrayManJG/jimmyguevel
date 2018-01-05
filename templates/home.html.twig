@@ -1,15 +1,21 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/home.css') }}">
+{% endblock %}
+
 {% block body %}
 
     <!-- BEGIN ROW -->
     <div class="row">
 
+    
+
         <div id="index-banner" class="parallax-container">
             <div class="section no-pad-bot">
                 <div class="container">
                     <br><br>
-                    <h1 class="header center">Jimmy GUEVEL</h1>
+                    <h1 class="ml2 header center">Jimmy GUEVEL</h1>
                     <div class="row center">
                         <h5 class="center-align">Développeur Back-end</h5>
                     </div>
@@ -22,6 +28,16 @@
             <div class="parallax" id="background1">
             </div>
         </div>
+
+        <h1 class="ml8">
+            <span class="letters-container">
+                <span class="letters letters-left">Hi</span>
+                <span class="letters bang">!</span>
+            </span>
+            <span class="circle circle-white"></span>
+            <span class="circle circle-dark"></span>
+            <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+        </h1>
 
         <!-- BEGIN COLUMN S2 -->
         <div class="col s2">
@@ -113,8 +129,6 @@
 
         <!-- BEGIN COLUMN S2 -->
 
-
-
         <div class="col s2">
             <div class="row">
                 <div class="hide-on-small-only hide-on-med-and-down">
@@ -143,4 +157,10 @@
     <!-- BEGIN FOOTER -->
 
     <!-- END FOOTER -->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    
+    <script src="{{ asset('build/js/home.js') }}"></script>
 {% endblock %}

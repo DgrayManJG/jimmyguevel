@@ -37,7 +37,7 @@ class ContactController
             $em->persist($contact);
             $em->flush();
 
-            $flashbag->add("success", "Le message à bien été transmit.");
+            $flashbag->add("success", "Le message Ã  bien Ã©tÃ© transmit.");
         }
 
         return new Response($twig->render('contact.html.twig', [

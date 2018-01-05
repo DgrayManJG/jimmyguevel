@@ -17,7 +17,7 @@
         <ul style="width:150px; margin-top:64px;" class="side-nav fixed">
             <li><a href="{{ url('home') }}">Accueil</a></li>
             <li><a href="{{ url('contact') }}">Contact</a></li>
-            <li><a href="{{ url('contact') }}">A propos</a></li>
+            <li><a href="{{ url('about') }}">A propos</a></li>
             {% if app.user is not null %}
                 <li><a href="{{ url('logout') }}">Déconnexion</a></li>
             {% else %}
@@ -28,7 +28,7 @@
         <ul id="nav-mobile" class="side-nav" style="padding-top:65px;">
             <li><a href="{{ url('home') }}">Accueil</a></li>
             <li><a href="{{ url('contact') }}">Contact</a></li>
-            <li><a href="">A propos</a></li>
+            <li><a href="{{ url('about') }}">A propos</a></li>
             {% if app.user is not null %}
                 <li><a href="{{ url('logout') }}">Déconnexion</a></li>
             {% else %}
@@ -72,10 +72,10 @@
 
         {% block footer %}{% endblock %}
 
-        {% block javascripts %}{% endblock %}
-
         <script src="{{ asset('build/js/jquery.js') }}"></script>
         <script src="{{ asset('build/js/materialize.js') }}"></script>
         <script src="{{ asset('build/js/app.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
