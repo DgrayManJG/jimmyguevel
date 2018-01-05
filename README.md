@@ -1,4 +1,4 @@
-*** Les bundles présent ***
+*** Les bundles prï¿½sent ***
 *********************
 <p>composer require annotations</p>
 <p>composer require twig</p>
@@ -11,6 +11,7 @@
 <p>composer require encore</p>
 <p>composer require security</p>
 <p>composer require security-csrf form</p>
+<p>composer require fabpot/goutte (web scrapping)</p>
 
 <br/>
 <br/>

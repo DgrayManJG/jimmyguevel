@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Project;
-use App\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -15,7 +14,6 @@ class HomeController
      * @Route("/", name="home")
      * @param $twig Environment
      * @param $doctrine RegistryInterface
-     * @param $formFactory FormFactoryInterface
      * @return twig
      */
     public function index(Environment $twig, RegistryInterface $doctrine)

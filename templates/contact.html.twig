@@ -2,15 +2,35 @@
 
 {% block body %}
 
-    <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4>Contact</h4>
-        <p class="left-align light">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button>Envoyer</button>
-            {{ form_end(form) }}
-        </p>
+    <!-- BEGIN ROW -->
+    <div class="row">
+
+        <!-- BEGIN COLUMN S2 -->
+        <div class="col s2">
+        </div>
+        <!-- END COLUMN S2 -->
+
+        <!-- BEGIN COLUMN S8 -->
+        <div class="col s8">
+
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>Contact</h4>
+                <p class="left-align light">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button>Envoyer</button>
+                    {{ form_end(form) }}
+                </p>
+            </div>
+
+        </div>
+
+        <!-- BEGIN COLUMN S2 -->
+        <div class="col s2">
+        </div>
+        <!-- END COLUMN S2 -->
+
     </div>
 
 {% endblock %}

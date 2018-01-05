@@ -12,9 +12,9 @@ Encore
 
     // uncomment to define the assets of the project
     .addEntry('js/app', './assets/js/app.js')
-    .addEntry('js/jquery', './assets/js/jquery-3.2.1.min.js')
+    .addEntry('js/jquery', './assets/js/jquery-2.2.4.min.js')
     .addEntry('js/hammer', './assets/js/hammer.min.js')
-    .addEntry('js/materialize', './assets/js/materialize.min.js')
+    .addEntry('js/materialize', './assets/js/materialize.js')
 
     .addStyleEntry('css/app', './assets/css/app.scss')
     .addStyleEntry('css/materialize', './assets/css/materialize.min.css')
@@ -24,7 +24,7 @@ Encore
     .enableSassLoader()
 
     // uncomment for legacy applications that require $/jQuery as a global variable
-    .autoProvidejQuery()
+    //.autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

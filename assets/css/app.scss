@@ -11,9 +11,6 @@ body {
   background-color: rgba(248, 247, 255, 1);
 }
 
-nav .brand-logo {
-  color: $color;
-}
 nav ul a {
   color : $color;
 }
@@ -59,10 +56,6 @@ p {
   font-size: inherit;
 }
 
-footer.page-footer {
-  margin: 0;
-}
-
 #background1 {
-  background-image: url('../img/background1.jpg');
+  background-image: url('../img/background2.png');
 }
